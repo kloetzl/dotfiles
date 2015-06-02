@@ -1,4 +1,4 @@
-export ZSH=$ZDOTDIR/.zsh
+export ZSH=$ZDOTDIR/zsh
 source $ZSH/agnoster.zsh-theme
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
