@@ -1,0 +1,7 @@
+[user]
+	name = Fabian Klötzl
+	email = fabian@kloetzl.info
+[push]
+	default = simple
+[core]
+	editor = vim
