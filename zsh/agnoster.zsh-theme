@@ -106,6 +106,7 @@ prompt_status() {
 
 ## Main prompt
 build_prompt() {
+  print -Pn "\e]0;%n@%m: %C\a"
   RETVAL=$?
   prompt_status
   prompt_context
