@@ -1,2 +1,2 @@
 
-path+=(/usr/local/bin /usr/local/sbin)
+path+=(/usr/local/bin /usr/local/sbin ~/bin)
