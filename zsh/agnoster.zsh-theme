@@ -106,8 +106,8 @@ prompt_status() {
 
 ## Main prompt
 build_prompt() {
-  echo -n "%{\e]2;%n@%m: %C\a%}"
   RETVAL=$?
+  echo -n "%{\e]2;%n@%m: %C\a%}"
   prompt_status
   prompt_context
   prompt_dir
