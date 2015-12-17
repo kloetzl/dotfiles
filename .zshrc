@@ -20,3 +20,4 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 	}
 fi
 
+export NETHACKOPTIONS="@$ZDOTDIR/.nethackrc"
