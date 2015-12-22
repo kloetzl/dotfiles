@@ -1,5 +1,6 @@
 export ZSH=$ZDOTDIR/zsh
 source $ZSH/agnoster.zsh-theme
+source local.zsh
 
 for config_file ($ZSH/*.zsh) source $config_file
 
