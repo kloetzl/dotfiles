@@ -2,7 +2,7 @@
 
 SHELL=zsh
 
-.PHONY: install uninstall
+.PHONY: install uninstall quiltrc gitconfig
 install: quiltrc gitconfig
 	echo "ZDOTDIR=$PWD" >> ~/.zshenv
 	echo "DEFAULT_USER=$(whoami)" >> local.zsh
