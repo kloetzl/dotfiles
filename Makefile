@@ -4,15 +4,15 @@ SHELL=zsh
 
 .PHONY: install uninstall quiltrc gitconfig
 install: quiltrc gitconfig
-	echo "ZDOTDIR=$PWD" >> ~/.zshenv
-	echo "DEFAULT_USER=$(whoami)" >> local.zsh
+	echo "ZDOTDIR=$(PWD)" >> ~/.zshenv
+	echo "DEFAULT_USER=$$(whoami)" >> local.zsh
 	echo "Installation successful.\nNow restart the shell…"
 
 quiltrc:
-	ln -s quiltrc ~/.quiltrc
+	ln -sT $(PWD)/quiltrc ~/.quiltrc
 
 gitconfig:
-	ln -s $@ ~/.$@
+	ln -sT $(PWD)/$@ ~/.$@
 
 uninstall:
 	[[ -L ~/.quiltrc ]] && rm ~/.quiltrc
