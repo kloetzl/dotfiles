@@ -1,8 +1,8 @@
-export ZSH=$ZDOTDIR/zsh
-source $ZSH/agnoster.zsh-theme
-source $ZDOTDIR/local.zsh
+export DOTFILES=$ZDOTDIR
+source $DOTFILES/zsh/agnoster.zsh-theme
+source $DOTFILES/local.zsh
 
-for config_file ($ZSH/*.zsh) source $config_file
+for config_file ($DOTFILES/zsh/*.zsh) source $config_file
 
 # Load and run compinit
 autoload -U compinit
