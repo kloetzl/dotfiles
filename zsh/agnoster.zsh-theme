@@ -60,9 +60,9 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  local user=`whoami`
+  local user=`whoami` inode=`ls -di / | cut -f 1 -d ' '`
 
-  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" || "$inode" != "2" ]]; then
     prompt_segment black default "%(!.%{%F{yellow}%}.)$user@%m"
   fi
 }
