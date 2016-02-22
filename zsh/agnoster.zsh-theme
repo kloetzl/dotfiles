@@ -73,7 +73,7 @@ prompt_git() {
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     ZSH_THEME_GIT_PROMPT_DIRTY='±'
     dirty=$(git status -s | wc -l )
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="%{➦%1G%} $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+    ref="%{⭠%1G%}$(git symbolic-ref HEAD 2> /dev/null)" || ref="%{➦%1G%} $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ "0" -ne $dirty ]]; then
       prompt_segment yellow black
       dirty="*"
@@ -81,7 +81,7 @@ prompt_git() {
       dirty=""
       prompt_segment green black
     fi
-    echo -n "%{${ref/refs\/heads\//⭠ }%2G%}$dirty"
+    echo -n "${ref/refs\/heads\// }$dirty"
   fi
 }
 
