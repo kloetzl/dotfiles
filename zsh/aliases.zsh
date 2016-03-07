@@ -1,6 +1,8 @@
 alias ll='ls -la'
 alias lh='ls -lah'
 alias ...='cd ../..'
+alias pacman='pacman --color=auto'
+alias grep='grep --color=auto'
 
 function(){
 	local PF="make CC=clang CXX=clang++"
