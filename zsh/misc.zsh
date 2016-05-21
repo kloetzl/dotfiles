@@ -11,3 +11,6 @@ setopt long_list_jobs
 ## pager
 export PAGER=less
 export LC_CTYPE=$LANG
+
+## make the whole pipe fail if a single commands exits != 0
+set -opipefail
