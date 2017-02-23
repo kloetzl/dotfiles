@@ -5,3 +5,8 @@
 	default = simple
 [core]
 	editor = vim
+
+[url "https://github/"]
+    insteadOf = "gh:"
+[url "git@github.com:"]
+    pushInsteadOf = "gh:"
