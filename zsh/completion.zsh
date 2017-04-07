@@ -19,7 +19,7 @@ else
 fi
 
 # uncomment if completion should be colorful
-# zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-colors ''
 
 # should this be in keybindings?
 bindkey -M menuselect '^o' accept-and-infer-next-history
@@ -77,3 +77,10 @@ fi
 # Makes completion accessible for newly installed commands.
 # Taken from https://wiki.archlinux.org/index.php/Zsh#Persistent_rehash
 zstyle ':completion:*' rehash true
+
+# Display message when no matches are found
+# formatting and messages
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %B%d%b'
