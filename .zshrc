@@ -1,6 +1,5 @@
 export DOTFILES=$ZDOTDIR
 source $DOTFILES/zsh/agnoster.zsh-theme
-source $DOTFILES/local.zsh
 
 for config_file ($DOTFILES/zsh/*.zsh) source $config_file
 
@@ -21,3 +20,5 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 fi
 
 export NETHACKOPTIONS="@$ZDOTDIR/nethackrc"
+
+source $DOTFILES/local.zsh
