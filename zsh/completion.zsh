@@ -19,7 +19,7 @@ else
 fi
 
 # uncomment if completion should be colorful
-zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:default'         list-colors ${(s.:.)LS_COLORS}
 
 # should this be in keybindings?
 bindkey -M menuselect '^o' accept-and-infer-next-history
