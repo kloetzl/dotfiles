@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 SHELL=zsh
-LINKS= quiltrc gitconfig clang-format
+LINKS= quiltrc gitconfig clang-format vimrc
 
 .PHONY: install uninstall $(LINKS)
 install: $(LINKS)
@@ -16,6 +16,8 @@ $(LINKS):
 	ln -sT $(PWD)/$@ ~/.$@
 
 uninstall:
-	[[ -L ~/.quiltrc ]] && rm ~/.quiltrc
+	for file in ${LINKS}; do \
+		[[ -L ~/.$$file ]] && rm ~/.$$file; \
+	done
 	[[ -L ~/.gitconfig ]] && rm ~/.gitconfig
 	[[ -L ~/.clang-format ]] && rm ~/.clang-format
