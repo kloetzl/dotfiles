@@ -18,6 +18,15 @@ else
   zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 fi
 
+
+# set sublime-style name completion
+# I have no idea, how this works; copied from StackOverflow. ☺
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
+
 # uncomment if completion should be colorful
 zstyle ':completion:*:default'         list-colors ${(s.:.)LS_COLORS}
 
