@@ -7,16 +7,17 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias sort='LC_ALL=C sort'
 
-function(){
-	local PF="make CC=clang CXX=clang++"
-	local COMMON="-fno-omit-frame-pointer -O0 -g -ggdb"
-	local MSANFLAGS="$COMMON -fsanitize=memory -fsanitize-memory-track-origins=2"
-	local ASANFLAGS="$COMMON -fsanitize=address"
-	local USANFLAGS="$COMMON -fsanitize=undefined"
-	local ISANFLAGS="$COMMON -fsanitize=integer"
-
-	alias msan="$PF CFLAGS=\"$MSANFLAGS\" CXXFLAGS=\"$MSANFLAGS -std=c++11\""
-	alias asan="$PF CFLAGS=\"$ASANFLAGS\" CXXFLAGS=\"$ASANFLAGS -std=c++11\""
-	alias usan="$PF CFLAGS=\"$USANFLAGS\" CXXFLAGS=\"$USANFLAGS -std=c++11\""
-	alias isan="$PF CFLAGS=\"$ISANFLAGS\" CXXFLAGS=\"$ISANFLAGS -std=c++11\""
+man() {
+	nocorrect env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[0;37m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[4;32m") \
+		PAGER="${commands[less]:-$PAGER}" \
+		_NROFF_U=1 \
+		GROFF_NO_SGR=1 \
+	man "$@"
 }
