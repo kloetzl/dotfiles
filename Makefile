@@ -13,7 +13,7 @@ install: $(LINKS)
 	echo "Installation successful.\nNow restart the shell…"
 
 $(LINKS):
-	ln -sT $(PWD)/$@ ~/.$@
+	ln -s $(PWD)/$@ ~/.$@
 
 uninstall:
 	for file in ${LINKS}; do \
